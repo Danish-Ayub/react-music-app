@@ -1,0 +1,24 @@
+.library {
+    position: fixed;
+    top: 0;
+    left: 0%;
+    width: 20rem;
+    height: 100%;
+    background-color: rgb(58, 58, 58);
+    padding: 20px 0;
+    h2 {
+        margin: 0 0 30px 20px;
+        font-size: 20px;
+    }
+}
+.library-song {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    img {
+        width: 30%;
+    }
+}
+.library-song:hover {
+    background-color: grey;
+}
