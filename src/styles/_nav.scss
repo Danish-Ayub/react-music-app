@@ -1,0 +1,22 @@
+nav {
+  min-height: 10vh;
+  width: 50%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  h1 {
+  }
+  button {
+    border: 2px solid #f1f1f1;
+    color: #f1f1f1;
+    padding: 0.5rem;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    &:hover {
+      background-color: #f1f1f1;
+      color: black;
+    }
+  }
+}

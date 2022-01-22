@@ -1,24 +1,50 @@
 .library {
-    position: fixed;
-    top: 0;
-    left: 0%;
-    width: 20rem;
-    height: 100%;
-    background-color: rgb(58, 58, 58);
-    padding: 20px 0;
-    h2 {
-        margin: 0 0 30px 20px;
-        font-size: 20px;
-    }
+  position: fixed;
+  top: 0;
+  left: 0%;
+  width: 20rem;
+  height: 100%;
+  background-color: rgb(58, 58, 58);
+  overflow-y: auto;
+  box-shadow: 2px 0 10px -7px #f1f1f1;
+  transition: all 0.5s ease;
+  transform: translateX(-100%);
+  opacity: 0;
+
+  h2 {
+    margin: 2rem;
+    font-size: 20px;
+  }
 }
 .library-song {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    img {
-        width: 30%;
+  display: flex;
+  align-items: flex-start;
+  cursor: pointer;
+  padding: 1rem 2rem 1rem 2rem;
+
+  img {
+    width: 30%;
+  }
+  .songs-description {
+    margin: 0 0 0 10px;
+
+    h3 {
+      font-size: 17px;
+      color: #ededed;
     }
-}
-.library-song:hover {
+    h4 {
+      font-size: 14px;
+      color: #c9c9c9;
+    }
+  }
+  &:hover {
     background-color: grey;
+  }
+}
+.selected {
+  background-color: #5c5c5c;
+}
+.library.active {
+  transform: translateX(0);
+  opacity: 1;
 }
