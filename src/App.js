@@ -7,7 +7,7 @@ import Song from "./components/Song";
 import Library from "./components/Library";
 import Nav from "./components/Nav";
 // Util
-import data from "./util";
+import data from "./data";
 
 function App() {
   // Ref
@@ -20,13 +20,23 @@ function App() {
   const [songInfo, setSongInfo] = useState({
     currentTime: 0,
     duration: 0,
+    animationPercantage: 0,
   });
   // Functions
   const timeUpdateHandler = (e) => {
     const current = e.target.currentTime;
     const duration = e.target.duration;
-    setSongInfo({ ...songInfo, currentTime: current, duration })
-  }
+    // Calculate Pecantage
+    const roundedCurrent = Math.round(current);
+    const roundedDuration = Math.round(duration);
+    const animation = Math.round((roundedCurrent / roundedDuration) * 100);
+    setSongInfo({
+      ...songInfo,
+      currentTime: current,
+      duration,
+      animationPercantage: animation
+    });
+  };
 
   return (
     <div className="App">
@@ -40,6 +50,7 @@ function App() {
       <Player
         audioRef={audioRef}
         songs={songs}
+        setSongs={setSongs}
         songInfo={songInfo}
         setSongInfo={setSongInfo}
         currentSong={currentSong}
